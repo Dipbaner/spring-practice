@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="org.example.Student">
+        <property name="studentId" value="101"></property>
+        <property name="studentName" value="Dip Banerjee"></property>
+        <property name="studentAddress" value="Saket Nagar"></property>
+    </bean>
+
+    <bean id="employee" class="com.springcore.collections.Employee">
+        <property name="name" value="Dip Banerjee"></property>
+        <property name="phones">
+            <list>
+                <value>1232434353</value>
+                <value>124435464645</value>
+                <value>243446534546</value>
+            </list>
+        </property>
+        <property name="addresses">
+            <set>
+                <value>Delhi</value>
+                <value>Bhopal</value>
+                <value>Goa</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="java" value="2 month"></entry>
+                <entry key="python" value="3 month"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="person" class="com.springcore.ci.Person">
+        <constructor-arg value="Dip Banerjee"></constructor-arg>
+        <constructor-arg value="10101"></constructor-arg>
+        <constructor-arg ref="certificate"></constructor-arg>
+    </bean>
+
+    <bean id="certificate" class="com.springcore.ci.Certificate">
+        <constructor-arg value="Java Certification"></constructor-arg>
+    </bean>
+
+    <bean id = "addition" class="com.springcore.ci.Addition">
+        <constructor-arg value="10" type="int"></constructor-arg>
+        <constructor-arg value="20" type="int"></constructor-arg>
+    </bean>
+</beans>
