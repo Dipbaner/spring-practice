@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id = "orderService" class="com.ecommerce.service.OrderService" autowire="byType">
+        <constructor-arg ref="email"></constructor-arg>
+        <constructor-arg ref = "invoice"></constructor-arg>
+        <property name="paymentService" ref="credit"></property>
+    </bean>
+
+    <bean id="credit" class="com.ecommerce.service.CreditCardPayment" primary="true"></bean>
+
+    <bean id="upi" class="com.ecommerce.service.UpiPayment"></bean>
+
+    <bean id="email" class="com.ecommerce.service.EmailNotification"></bean>
+
+    <bean id="order" class="com.ecommerce.service.Order" scope="prototype"></bean>
+
+    <bean id="invoice" class="com.ecommerce.service.InvoiceService"></bean>
+
+</beans>

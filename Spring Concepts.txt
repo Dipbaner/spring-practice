@@ -1,0 +1,18 @@
+Spring Concepts :-
+
+
+Bean  :- A bean is just a java object that spring manages.
+
+Spring Container (IoC Container) :- Brain of the spring. It is responsible for  :
+				    Creating Beans
+				   Injecting their dependencies
+				Managing their Lifecycle
+
+Inversion of Control (IoC) -> Code controls when and how objects are created
+In Spring -> Spring manages, and creates objects for you
+
+Application Context -> main Spring Container Implementation
+Knows every bean, manages them, and resolve dependency
+				    
+
+pom.xml -> POM -> Project Object Model

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id = "studentService" class="com.example.service.StudentService">
+        <constructor-arg ref = "mathTeacher"></constructor-arg>
+        <property name="notificationService" ref="email"></property>
+    </bean>
+
+    <bean id="mathTeacher" class="com.example.service.MathTeacher"></bean>
+    <bean id="scienceTeacher" class="com.example.service.ScienceTeacher"></bean>
+
+    <bean id="email" class="com.example.service.EmailNotification"></bean>
+
+    <bean id="student" class="com.example.service.Student" scope="prototype"></bean>
+</beans>
